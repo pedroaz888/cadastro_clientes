@@ -55,7 +55,7 @@ def buscar_servico_e_produtos(request):
     if query:
         buscar_servico_e_produtos = Fornecedores.objects.filter(produto_e_servicos__icontains=query)
         if not buscar_servico_e_produtos:
-            messages.warning(request, 'Fornecedor ainda não registrado.')     
+            messages.warning(request, 'Fornecedor ainda não registrado...')     
     else:
         buscar_servico_e_produtos = Fornecedores.objects.all()
        
