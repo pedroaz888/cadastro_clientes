@@ -112,12 +112,12 @@ WSGI_APPLICATION = 'cadastros.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgres',
         'NAME': 'railway',
-        'USER': 'root',
-        'PASSWORD': '09n2LgPRLWABlTycHZrr',
-        'HOST': 'containers-us-west-103.railway.app',
-        'PORT': '6059'
+        'USER': 'postgres',
+        'PASSWORD': 'Zc4BSSKgcNTywhpNQRES',
+        'HOST': 'containers-us-west-205.railway.app',
+        'PORT': '7646'
 
     }
 
