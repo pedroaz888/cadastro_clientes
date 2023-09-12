@@ -44,7 +44,7 @@ INSTALLED_APPS = [
 ]
 
 
-CSRF_TRUSTED_ORIGINS = ['https://cadastroclientes-production.up.railway.ap']
+CSRF_TRUSTED_ORIGINS = ['https://cadastroclientes-production.up.railway.app/']
 
 
 
