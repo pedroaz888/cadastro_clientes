@@ -117,11 +117,7 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': '09n2LgPRLWABlTycHZrr',
         'HOST': 'containers-us-west-103.railway.app',
-        'PORT': '6059',
-        'OPTIONS': {
-        'charset': 'utf8mb4',
-        'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-        }
+        'PORT': '6059'
 
     }
 
