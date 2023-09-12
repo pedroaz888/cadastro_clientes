@@ -39,7 +39,7 @@ def lista_fornecedores(request):
     if nome:
         fornecedores = fornecedores.filter(nome__icontains=nome)
     if produto_e_servicos:
-        fornecedores = fornecedores.filter(produto_e_servicos__icontains=nome)
+        fornecedores = fornecedores.filter(produto_e_servicos__icontains=produto_e_servicos)
     if telefone:
         fornecedores = fornecedores.filter(telefone=telefone)
     if email:
