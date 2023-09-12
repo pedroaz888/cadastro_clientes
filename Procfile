@@ -1,1 +1,1 @@
-PROCFILE - web: python manage.py migrate && gunicorn cadastros.wsgi
+web: gunicorn cadastros.wsgi --log-file -
