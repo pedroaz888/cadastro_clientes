@@ -8,7 +8,7 @@
     <div class="container">
      
         <h1> Cadastro de cliente </h1></br>
-        <form action="{% url 'home' %}" method="POST"> 
+        <form action="{% url 'home' %}" method="POST"> {% csrf_token %} 
             
         {% if messages  %}
         <br>
