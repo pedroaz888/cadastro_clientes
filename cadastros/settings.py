@@ -63,7 +63,7 @@ ROOT_URLCONF = 'cadastros.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'clientes/templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'clientes/templates', 'fornecedores/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
