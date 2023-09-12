@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+
+
+<div class="container"></br>
+ <div class="btn-group" role="group" aria-label="Basic example">
+    
+  
+    <a href="{% url 'cadastro_fornecedores' %}" class="btn btn-dark btn-lg ">Cadastre outros fornecedores</a>  
+
+    <a href="{% url 'lista_fornecedores' %}" class="btn btn-secondary btn-lg " style="background-color: #356378;"> Lista de fornecedores</a> 
+
+  </div>
+
+</br></br>
+ 
+       <table class = "table table-bordered table-striped"> 
+        
+        
+                      
+            <div class="row">
+                
+                <div class="col-md-3">
+                    <form method="GET" action="{% url 'buscar_servico_e_produtos' %}">
+                        <div class="input-group">
+                            
+                            <input class="form-control" type="search" name="buscar_servico_e_produtos" placeholder="Buscar por serviços e produtos..." aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Buscar</button>
+                        </div>
+                        
+                        {% if messages  %}
+                        <br>
+                        {% for message in messages %}
+                            <div class="alert {{  message.tags }}">{{message}}</div>
+                        {% endfor %}
+                    {% endif %}
+
+                    </form>
+                    
+                    
+               
+            </div>
+        </div>         
+</br>
+
+            <th>id </th>
+            <th>nome </th>
+            <th>produtos e serviços </th>
+            <th>telefone</th>
+            <th>email</th>
+
+        </tr>       
+    
+        {% for fornecedor in fornecedores %}
+        <tr>
+            <td>{{fornecedor.id}}</td>
+            <td>{{fornecedor.nome}}</td>
+            <td>{{fornecedor.produto_e_servicos}}</td>
+            <td>{{fornecedor.telefone}}</td> 
+            <td>{{fornecedor.email }}</td> 
+            {% if fornecedor.id %}
+                <td><a href="{% url 'excluir_fornecedor' fornecedor.id %}" class="btn btn-danger btn-sm">EXCLUIR</a></td>
+            
+        </tr>
+        {% endif %}
+        {% endfor %}
+
+    </table>
+</div>
+
+
+
+{% endblock %} 
+
+
+
+

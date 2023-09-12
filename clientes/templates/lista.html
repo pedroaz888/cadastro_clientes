@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+
+
+<div class="container"></br>
+ <div class="btn-group" role="group" aria-label="Basic example">
+    
+  
+    <a href="{% url 'home' %}" class="btn btn-dark btn-lg ">Cadastre outros clientes</a>  
+
+    <a href="{% url 'lista' %}" class="btn btn-secondary btn-lg " style="background-color: #356378;"> Lista de clientes</a> 
+
+  </div>
+
+</br></br>
+ 
+       <table class = "table table-bordered table-striped"> 
+        
+        
+                      
+            <div class="row">
+                
+                <div class="col-md-3">
+                    <form method="GET" action="{% url 'buscar_nomes' %}">
+                        <div class="input-group">
+                            
+                            <input class="form-control" type="search" name="buscar_nomes" placeholder="Buscar por nome..." aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Buscar</button>
+                        </div>
+                        
+                        {% if messages  %}
+                        <br>
+                        {% for message in messages %}
+                            <div class="alert {{  message.tags }}">{{message}}</div>
+                        {% endfor %}
+                    {% endif %}
+
+                    </form>
+                    
+                    
+               
+            </div>
+        </div>         
+</br>
+
+            <th>id</th>
+            <th>apelido </th>
+            <th>nome </th>
+            <th>telefone</th>
+            <th>email</th>
+
+        </tr>       
+    
+        {% for cliente in clientes %}
+        <td>{{cliente.id}}</td>
+        <td>{{cliente.apelido}}</td>
+        <td>{{cliente.nome}}</td>
+        <td>{{cliente.telefone}}</td> 
+        <td>{{cliente.email }}</td> 
+        {% if cliente.id %}
+            <td><a href="{% url 'excluir_cliente' cliente.id %}"  class="btn btn-danger btn-sm">EXCLUIR</a></td>
+
+        </tr>
+        {% endif %}
+        {% endfor %}
+   
+
+    </table>
+</div>
+
+
+
+{% endblock %} 
+
+
+
+
+
