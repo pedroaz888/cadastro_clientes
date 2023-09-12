@@ -110,19 +110,29 @@ WSGI_APPLICATION = 'cadastros.wsgi.application'
 
 }  """
 
+""" DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'cadastro_base',
+        'USER': 'postgres',
+        'PASSWORD': 'pedroaz',
+        'HOST': 'localhost',
+        
+    }
+} """  
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgres',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
         'PASSWORD': 'Zc4BSSKgcNTywhpNQRES',
         'HOST': 'containers-us-west-205.railway.app',
-        'PORT': '7646'
-
+        'PORT': '7646',
+        
     }
-
 } 
-
 
 """ DATABASES = {
     'default': {
