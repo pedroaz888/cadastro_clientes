@@ -12,7 +12,7 @@ def cadastro_fornecedores(request):
         
        
         if nome and produto_e_servicos and telefone and email:
-            fornecedores = Fornecedores(nome=nome, produto_e_servicos=nome, telefone=telefone, email=email)
+            fornecedores = Fornecedores(nome=nome, produto_e_servicos=produto_e_servicos, telefone=telefone, email=email)
             fornecedores.save()
             messages.add_message(request, messages.SUCCESS, 'Fornecedor registrado com sucesso.')
             
